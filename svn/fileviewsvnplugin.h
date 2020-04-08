@@ -96,6 +96,13 @@ private:
 
     QList<QAction*> directoryActions(const KFileItem &directory) const;
 
+    /**
+     * Checks #item parent directory (or its parent directory and so on) in unversioned.
+     * @param item Item to check.
+     * @return True item is in unversioned directory, false either.
+     */
+    bool isInUnversionedDir(const KFileItem& item) const;
+
 private:
     bool m_pendingOperation;
     QHash<QString, ItemVersion> m_versionInfoHash;
