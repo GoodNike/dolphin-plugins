@@ -673,10 +673,9 @@ bool FileViewSvnPlugin::isInUnversionedDir(const KFileItem& item) const
 {
     const QString itemPath = item.localPath();
 
-    auto it = m_versionInfoHash.cbegin();
-    for ( ; it != m_versionInfoHash.cend(); ++it) {
+    for (auto it = m_versionInfoHash.cbegin(); it != m_versionInfoHash.cend(); ++it) {
         // Add QDir::separator() to m_versionInfoHash entry to ensure this is a directory.
-        if ( it.value() == UnversionedVersion && itemPath.startsWith(it.key() + QDir::separator()) ) {
+        if (it.value() == UnversionedVersion && itemPath.startsWith(it.key() + QDir::separator())) {
             return true;
         }
     }
