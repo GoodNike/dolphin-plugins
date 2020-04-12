@@ -261,7 +261,7 @@ QList<QAction*> FileViewSvnPlugin::actions(const KFileItemList& items) const
 {
     // Special case: if any item is in unversioned directory we shouldn't add any actions because
     // we can do nothing with this item.
-    for (const auto &i : qAsConst(items)) {
+    for (const auto &i : items) {
         if (isInUnversionedDir(i)) {
             return {};
         }
